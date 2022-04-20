@@ -37,9 +37,12 @@ buildscript {
         google()
         mavenCentral()
     }
+    dependencies {
+        classpath(Dependencies.DaggerHilt.daggerHiltGradlePlugin)
+    }
 }
 
-subprojects{
+subprojects {
     repositories {
         google()
         mavenCentral()

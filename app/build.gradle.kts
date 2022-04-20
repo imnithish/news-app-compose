@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+
 /*
  * Created by Nitheesh AG on 20/04/22, 11:54 PM
  * Last modified 20/04/22, 11:51 PM
@@ -29,6 +31,8 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -50,8 +54,8 @@ android {
         getByName("release") {
             isMinifyEnabled = false
             proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
             )
         }
     }
@@ -97,4 +101,14 @@ dependencies {
     androidTestImplementation(Dependencies.composeJUnitAndroidTest)
     debugImplementation(Dependencies.composeTooling)
     debugImplementation(Dependencies.Accompanist.flowRow)
+
+    implementation(Dependencies.DaggerHilt.daggerHilt)
+    kapt(Dependencies.DaggerHilt.daggerHiltKapt)
+    implementation(Dependencies.DaggerHilt.daggerHilViewModel)
+    implementation(Dependencies.DaggerHilt.daggerHiltNavigationCompose)
+
+}
+
+kapt {
+    correctErrorTypes = true
 }

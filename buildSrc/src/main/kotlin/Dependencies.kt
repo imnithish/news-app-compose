@@ -26,4 +26,13 @@ object Dependencies {
         val systemUIController by lazy { "com.google.accompanist:accompanist-systemuicontroller:${Versions.accompanist}" }
         val flowRow by lazy { "com.google.accompanist:accompanist-flowlayout:${Versions.accompanist}" }
     }
+
+    object DaggerHilt {
+        val daggerHiltGradlePlugin by lazy { "com.google.dagger:hilt-android-gradle-plugin:${Versions.dagger_hilt_gradle_plugin}" }
+        val daggerHilt by lazy { "com.google.dagger:hilt-android:${Versions.dagger_hilt}" }
+        val daggerHiltKapt by lazy { "com.google.dagger:hilt-android-compiler:${Versions.dagger_hilt}" }
+        val daggerHilViewModel by lazy { "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.dagger_hilt_view_model}" }
+        val daggerHiltNavigationCompose by lazy { "androidx.hilt:hilt-navigation-compose:1.0.0:${Versions.dagger_hilt_navigation}" }
+
+    }
 }
